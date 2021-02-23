@@ -1,32 +1,30 @@
 <%- include('partials/head') %>
+<title>Flip your Text</title>
+<link rel="stylesheet" href="/css/flip.css">
+</head>
+<body onload="initFlip()">
     <%- include('partials/navbar') %>
-
-        <link rel="stylesheet" href="/css/flip.css">
-        <section class="flip">
+            <section class="flip" id="blackimg">
             <div class="left-side">
                 <h1>Welcome,</h1>
                 <form method="POST" id="form-flip">
-
                     <div class="text-box left">
-                        <textarea class="text-area" id="newArticle" type="text" onchange="sendPost()" rows="5.5"
-                            cols="60" name="article"
+                        <textarea class="text-area" id="newArticle" type="text" name="article"
                             placeholder="Input your text here"><%if(response){%><%=firstArticle%><%}%></textarea>
                     </div>
-                    <!-- <div class="btn-container">
-                        <button name="reverse" onclick="toggleConverter('reverse')">Flip to Opposite</button>
-                        <button name="neutral" onclick="toggleConverter('neutral')">Flip to Gender Neutral</button>
-                    </div> -->
                     <div class="btn-container">
-                        <button type="submit" name="reverse" onsubmit="convertToArray()" formaction="/articles">Flip to
-                            Opposite</button>
-                        <button type="submit" name="neutral" onsubmit="convertToArray()" formaction="/neutralarticle">Flip to Gender Neutral</button>
+                        <button id="flipbut" type="submit" name="reverse" formaction="/articles">Flip to Opposite</button>
+                        <button id="neutralbut" type="submit" name="neutral" formaction="/neutralarticle">Flip to Gender Neutral</button>
                     </div>
                 </form>
             </div>
             <div class="right-side">
-                <h1>Your new script,</h1>
+                <h1>Your new <span id="flipWord">script, </span></h1>
                 <div class="text-box right">
-                    <p id="response-box"></p>
+                    <p id="response-box" onclick="copyToClipboard()"></p>
+                    <div class="response-footer">
+                        <p>Converted words: <% if(response) {%><%= flippedArray.length %><% } %></p><span id="copied-element" class="">Click on text to copy!</span>
+                    </div>
                 </div>
             </div>
             <% if(response) {%>

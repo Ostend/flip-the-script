@@ -31,7 +31,6 @@ app.set('public', path.join(__dirname,'/public'));
 //************* */ */
 app.get('/', (req, res) => {
     res.render('home');
-
 })
 /* ********************************
 empty list/form page step I
@@ -40,9 +39,22 @@ app.get('/flip', (req, res) => {
     res.render('flip', {response : false});
 });
 
+app.get('/statistics', (req, res) => {
+    res.render('statistics', {response : false});
+});
+
+app.get('/predictor', (req, res) => {
+    res.render('predictor', {response : false});
+});
+
 app.get('/why-it-matters', (req, res) => {
     res.render('why-it-matters', {response : false});
 });
+
+app.get("/about", (req, res) => {
+    res.render("aboutUs", {response : false});
+});
+
 /***************************
 fem/masc path, send back to user
 **************************** */
@@ -71,8 +83,7 @@ app.post('/articles', (req, res) => {
     })
     .catch(function(error){
         console.log(error);
-    });
-    
+    });   
   })
 
 
@@ -81,15 +92,15 @@ app.post('/articlecat', (req, res) => {
     const{source} = req.body;
     const{topic}= req.body;
     const{sex}=req.body; 
-    const data=[source, topic, sex] 
+    const data=[source, topic, sex];
     axios.post("http://localhost:5000/stats", data)
     .then(function(response){
-        res.render("home")
+        console.log(response.data)
+        res.render("predictor-result", {response: response.data})
     })
     .catch(function(error){
         console.log(error);
     });
-    
   })
   
  

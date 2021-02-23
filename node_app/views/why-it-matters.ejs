@@ -1,36 +1,41 @@
 <%- include('partials/head') %>
+    <title>Why It Matters</title>
+</head>
+<body onload="initWhy()">
     <%- include('partials/navbar') %>
         <%- include('partials/why') %>
         <link rel="stylesheet" href="/css/why-it-matters.css">
 
-            <section class="video-section">
+            <section class="video-section" id="video-section">
                 <h3>Why it matters</h3>
                 <div class="video-container">
-                    <iframe width="90%" height="80%" src="https://www.youtube.com/embed/awvWRm-f87w" frameborder="0"
+                    <iframe src="https://www.youtube.com/embed/awvWRm-f87w" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
             </section>
             <section class="reasons-section">
                 <div class="title-container">
-                    <h3>3 Reasons </h3>
-                    <h2>Why We Should All Care</h2>
+                    <h2>3 Reasons </h2>
+                    <h3>Why We Should All Care</h3>
                 </div>
                 <div class="reasons-container">
                     <div class="reason">
-                        <div>1</div>
-                        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto corporis mollitia culpa perferendis eligendi eos nemo dolor tempora eveniet labore non, debitis sint nulla magnam harum laboriosam? Adipisci, quam expedita.</div>
+                        <div class="number">1</div>
+                        <div class="text">As we can see with the scenario presented earlier, the way that language, especially pronouns, affects the way we perceive genders goes deeper than we consciously think. The way we use pronouns has the potential effect to silence and turn one group of gender invisible while spotlighting a different group at the same time.</div>
                     </div>
                     <div class="reason">
-                        <div>2</div>
-                        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto corporis mollitia culpa perferendis eligendi eos nemo dolor tempora eveniet labore non, debitis sint nulla magnam harum laboriosam? Adipisci, quam expedita.</div>
+                        <div class="number">2</div>
+                        <div class="text">One of the most important reasons why we should all work towards a fairer language, is respect. Respect for the identity of every human being and their right of belonging. We would also like to give the awareness to step away from the binary of gender, to become more inclusive to different types of identity. How can a person feel part of a society, when their identity is constantly denied or invisible?</div>
                     </div>
                     <div class="reason">
-                        <div>3</div>
-                        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto corporis mollitia culpa perferendis eligendi eos nemo dolor tempora eveniet labore non, debitis sint nulla magnam harum laboriosam? Adipisci, quam expedita.</div>
+                        <div class="number">3</div>
+                        <div class="text">Every day more and more companies are called to advocate for gender equality.  It has become not only an add on but a must to talk about and also advocate for gender equality. We hope to give awareness to people who hold positions of power, of leadership, those who shape what we consume, writers, reporters, teachers, and, especially, ourselves- to be aware of whom we are including in our narrative but more importantly, of whom we are excluding.</div>
                     </div>
                 </div>
             </section>
+            <%- include('partials/footer') %>
+
             </body>
 
             </html>

@@ -1,16 +1,61 @@
+  
 .about {
     display: flex;
-    height: 100vh;
+    height: fit-content;
+    position:relative;
     padding: 2em;
     padding-top: 15%;
     flex-direction: column;
-    background-color: white;
+    z-index: 2;
+    background-color: #f5f5f5;
 }
 
-.about .text-box-two {
+#title1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    font-family: "Sarabun", sans-serif;
+    transition: all 2s;
+}
+
+#title2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    font-family: "Sarabun", sans-serif;
+}
+
+
+#contact-button {
+    font-size: 1rem;
+    font-weight: medium;
+    font-family: "Sarabun", sans-serif;
+    padding:5px 3em 5px 3em;
+}
+.text-contain{
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
     width: 50%;
-    height: 85%;
+    padding-top: 1em;
+    
+}
+.text-box.two {
+    display: flex;
+    width: 40%;
+    font-size: 0.7rem;
+    margin: auto;
     flex-direction: column;  
     align-items: center;
+    justify-content: left;
+}
+
+.btn-start {
+    padding: 10px;
+    margin: 1em;
+    border-radius: 20px;
+    box-shadow: 121212 2px 5px 2px;
+}
+
+.d-none {
+    display: none;
 }
